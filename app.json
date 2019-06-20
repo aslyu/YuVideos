@@ -1,0 +1,21 @@
+{
+  "pages": [
+    
+    "pages/list/list",
+    "pages/report/report",
+    "pages/mine/mine",
+    "pages/videoInfo/videoInfo",
+    "pages/userLogin/userLogin",
+    "pages/chooseBgm/chooseBgm",
+    "pages/userRegist/userRegist",
+    "pages/searchVideo/searchVideo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "YuVideos",
+    "navigationBarTextStyle": "black"
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

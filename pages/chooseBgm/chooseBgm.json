@@ -1,0 +1,5 @@
+{
+  "usingComponents":{
+    "iaudio":"/pages/iaudio/iaudio"
+  }
+}
