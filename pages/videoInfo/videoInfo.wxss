@@ -156,3 +156,13 @@ page {
     margin-left: 10px;
     font-size: 18px;
 }
+
+.messageBoard{
+  background:white;
+  width:100%;
+  height:80%;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  border-radius:50rpx 50rpx 0 0;
+}

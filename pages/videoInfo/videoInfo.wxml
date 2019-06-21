@@ -1,11 +1,10 @@
-<view style='height:100%;width:100%;'>
+<view style='height:100%;width:100%;position: absolute;z-index: 1;'>
 
   <video id="myVideo" src="{{src}}" muted="{{false}}" controls="{{true}}" autoplay="{{true}}" loop="{{true}}" enable-progress-gesture="{{false}}" style='height:100%;width:100%;' objectFit='{{cover}}'>
 
     <!-- <cover-view class='container'> -->
 
     <!-- </cover-view> -->
-
     <view class='container-top'>
       <!-- 上传视频 -->
       <cover-image src='../resource/images/camera.png' style='width:50rpx;height:50rpx;' bindtap='upload'></cover-image>
@@ -45,12 +44,20 @@
       <!-- 我的按钮 -->
       <cover-image class='' src='../resource/images/mine.png' class="size-bottom" bindtap='showMine'></cover-image>
     </view>
-
+   
+    
   </video>
 
 </view>
 
+<view class="messageBoard" hidden='{{!showMessageBoard}}'> 
+  
+</view>
+
 <view>
+
+
+
 
   <view class="saySthView">
     <input name="commentContent" class="saySth" placeholder="{{placeholder}}" confirm-type="send" bindconfirm="saveComment" focus='{{commentFocus}}' value='{{contentValue}}' data-replyFatherCommentId='{{replyFatherCommentId}}' data-replyToUserId='{{replyToUserId}}'

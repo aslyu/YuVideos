@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/videoInfo/videoInfo",
+    
     "pages/list/list",
     "pages/report/report",
-    "pages/mine/mine",
     "pages/videoInfo/videoInfo",
+    "pages/mine/mine",
     "pages/userLogin/userLogin",
     "pages/chooseBgm/chooseBgm",
     "pages/userRegist/userRegist",
