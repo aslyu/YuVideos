@@ -27,11 +27,18 @@ Page({
           'userToken': user.userToken,
         },
         success:function(res){
+          var realUrl = serverUrl + '/bgm/list';
           console.log(res.data);
           wx.hideLoading();
           if(res.data.status == 200){
             that.setData({
               songList:res.data.data
+            })
+          }
+          if(res.data.status == 502){
+            wx.navigateTo({
+              url:'../userLogin/userLogin?redirectUrl=' + realUrl,              
+      
             })
           }
         }

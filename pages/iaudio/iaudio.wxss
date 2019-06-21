@@ -1,5 +1,5 @@
 .audio-wapper{
-  width: 80%;
+  width: 91%;
   height: 120rpx;
   background-color: ghostwhite;
   border: 1px solid gainsboro;

@@ -57,6 +57,7 @@ Page({
             app.setGlobalUserInfo(res.data.data);
 
             var redirectUrl = that.redirectUrl;
+           
             if (redirectUrl != null && redirectUrl != undefined && redirectUrl != ''){
               wx.reLaunch({
                 url: redirectUrl,

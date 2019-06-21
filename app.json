@@ -1,6 +1,6 @@
 {
   "pages": [
-    
+    "pages/videoInfo/videoInfo",
     "pages/list/list",
     "pages/report/report",
     "pages/mine/mine",

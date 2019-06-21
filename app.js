@@ -1,6 +1,6 @@
 App({
   userInfo: null,
-  serverUrl: "https://huangguiyu.com/a",
+  serverUrl: "https://huangguiyu.com/v",
   beiyongUrl: "http://460b15cf.nat123.cc",
 
   setGlobalUserInfo: function(user) {
