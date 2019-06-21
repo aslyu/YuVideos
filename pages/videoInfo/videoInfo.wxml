@@ -1,4 +1,4 @@
-<view style='height:100%;width:100%;position: absolute;z-index: 1;'>
+<view style='height:100%;width:100%;'>
 
   <video id="myVideo" src="{{src}}" muted="{{false}}" controls="{{true}}" autoplay="{{true}}" loop="{{true}}" enable-progress-gesture="{{false}}" style='height:100%;width:100%;' objectFit='{{cover}}'>
 
@@ -48,17 +48,16 @@
     
   </video>
 
-</view>
+  <view class="messageBoard" hidden='{{!showMessageBoard}}'> 
 
-<view class="messageBoard" hidden='{{!showMessageBoard}}'> 
   
+  </view> 
+
 </view>
 
-<view>
+ 
 
-
-
-
+ <view>
   <view class="saySthView">
     <input name="commentContent" class="saySth" placeholder="{{placeholder}}" confirm-type="send" bindconfirm="saveComment" focus='{{commentFocus}}' value='{{contentValue}}' data-replyFatherCommentId='{{replyFatherCommentId}}' data-replyToUserId='{{replyToUserId}}'
     />
@@ -72,7 +71,7 @@
           <label class='nickname-lbl'>@{{item.nickname}}</label>
           于
           <label class='date-lbl'>{{item.timeAgoStr}}</label>
-          <!-- 留言： -->
+          
           <block wx:if="{{item.toNickname != null}}">
             回复
             <label class='nickname-lbl'>@{{item.toNickname}}</label>
@@ -85,4 +84,4 @@
       <view class='comments-content'>{{item.comment}}</view>
     </view>
   </block>
-</view>
+</view> 
