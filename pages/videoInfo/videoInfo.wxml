@@ -44,44 +44,75 @@
       <!-- 我的按钮 -->
       <cover-image class='' src='../resource/images/mine.png' class="size-bottom" bindtap='showMine'></cover-image>
     </view>
-   
-    
+
+
   </video>
 
-  <view class="messageBoard" hidden='{{!showMessageBoard}}'> 
+  <view class="messageBoard" hidden='{{!showMessageBoard}}'>
 
-  
-  </view> 
+
+  </view>
 
 </view>
 
- 
 
- <view>
+
+<view>
   <view class="saySthView">
     <input name="commentContent" class="saySth" placeholder="{{placeholder}}" confirm-type="send" bindconfirm="saveComment" focus='{{commentFocus}}' value='{{contentValue}}' data-replyFatherCommentId='{{replyFatherCommentId}}' data-replyToUserId='{{replyToUserId}}'
     />
   </view>
 
-  <block wx:for="{{commentsList}}">
-    <view class='comments-all' bindtap='replyFocus' data-fatherCommentId='{{item.id}}' data-toUserId='{{item.fromUserId}}' data-toNickname='{{item.nickname}}'>
-      <view class='container-comments'>
-        <image class="face-comments" src='{{serverUrl}}{{item.faceImage}}'></image>
-        <view class='nickname-comments'>
-          <label class='nickname-lbl'>@{{item.nickname}}</label>
-          于
-          <label class='date-lbl'>{{item.timeAgoStr}}</label>
-          
-          <block wx:if="{{item.toNickname != null}}">
-            回复
-            <label class='nickname-lbl'>@{{item.toNickname}}</label>
-          </block>
-          <block wx:else>
-            留言：
-          </block>
+  <block wx:for="{{commentsList}}" wx:for-item="fatherItem">
+
+    <block wx:if="{{fatherItem.fatherCommentId == null}}">
+      <view class='comments-all' bindtap='replyFocus' data-fatherCommentId='{{fatherItem.id}}'  data-toUserId='{{fatherItem.fromUserId}}' data-toNickname='{{fatherItem.nickname}}'>
+        <view class='container-comments'>
+          <image class="face-comments" src='{{serverUrl}}{{fatherItem.faceImage}}'></image>
+          <view class='nickname-comments'>
+            <label class='nickname-lbl'>@{{fatherItem.nickname}}</label>
+            于
+            <label class='date-lbl'>{{fatherItem.timeAgoStr}}</label>
+
+            <block wx:if="{{fatherItem.toNickname != null}}">
+              回复
+              <label class='nickname-lbl'>@{{fatherItem.toNickname}}</label>
+            </block>
+            <block wx:else>
+              留言：
+            </block>
+          </view>
         </view>
+        <view class='comments-content'>{{fatherItem.comment}}</view>
       </view>
-      <view class='comments-content'>{{item.comment}}</view>
-    </view>
+    
+
+    <block wx:for="{{commentsList}}" wx:for-item="childrenItem">
+      <block wx:if="{{fatherItem.id==childrenItem.fatherCommentId}}">
+        <view class='comments-all-children' bindtap='replyFocus' data-fatherCommentId='{{childrenItem.fatherCommentId}}'  data-toUserId='{{childrenItem.fromUserId}}' data-toNickname='{{childrenItem.nickname}}'>
+          <view class='container-comments'>
+            <image class="face-comments" src='{{serverUrl}}{{childrenItem.faceImage}}'></image>
+            <view class='nickname-comments'>
+              <label class='nickname-lbl'>@{{childrenItem.nickname}}</label>
+              于
+              <label class='date-lbl'>{{childrenItem.timeAgoStr}}</label>
+
+              <block wx:if="{{childrenItem.toNickname != null}}">
+                回复
+                <label class='nickname-lbl'>@{{childrenItem.toNickname}}</label>
+              </block>
+              <block wx:else>
+                留言：
+              </block>
+            </view>
+          </view>
+          <view class='comments-content'>{{childrenItem.comment}}</view>
+        </view>
+      </block>
+    </block>
+
+    </block>
+
   </block>
-</view> 
+
+</view>

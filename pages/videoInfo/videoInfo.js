@@ -63,6 +63,7 @@ Page({
         });
       }
     })
+    
     that.getCommentsList(1);
   },
   
@@ -248,6 +249,9 @@ Page({
 
   replyFocus: function (e) {
     var fatherCommentId = e.currentTarget.dataset.fathercommentid;
+    if (fatherCommentId){
+
+    }
     var toUserId = e.currentTarget.dataset.touserid;
     var toNickname = e.currentTarget.dataset.tonickname;
 
@@ -266,6 +270,11 @@ Page({
     // 获取评论回复的fatherCommentId和toUserId
     var fatherCommentId = e.currentTarget.dataset.replyfathercommentid;
     var toUserId = e.currentTarget.dataset.replytouserid;
+
+    if (fatherCommentId == undefined && toUserId == undefined){
+      fatherCommentId = '';
+      toUserId = '';
+    }
 
     var user = app.getGlobalUserInfo();
     var videoInfo = JSON.stringify(that.data.videoInfo);
@@ -320,7 +329,8 @@ Page({
 
         var commentsList = res.data.data.rows;
         var newCommentsList = that.data.commentsList;
-
+        
+        
         that.setData({
           commentsList: newCommentsList.concat(commentsList),
           commentsPage: page,

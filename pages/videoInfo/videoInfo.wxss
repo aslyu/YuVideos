@@ -105,6 +105,15 @@ page {
     color: #e8e8e8;
 }
 
+.comments-all-children {
+    /* margin-top: 10px; */
+      margin-left: 50rpx;
+      margin-bottom: 10px;  
+      /* border-bottom: solid 1px gray;   */
+    background-color: #141414;
+    color: #e8e8e8;
+}
+
 .face-comments {
     width: 60rpx;
     height: 60rpx;
